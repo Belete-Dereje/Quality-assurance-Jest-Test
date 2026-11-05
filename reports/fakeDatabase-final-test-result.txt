@@ -1,0 +1,23 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/lifecycle/fakeDatabase.test.js
+
+(node:4896) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/lifecycle/fakeDatabase.test.js
+  FakeDatabase Lifecycle Tests
+    √ should connect successfully before tests (4 ms)
+    √ should insert a record when connected (3 ms)
+    √ should reject insertion when database is disconnected (16 ms)
+    √ should start with empty records for every test (1 ms)
+    √ should not contain records from previous tests (1 ms)
+    √ should verify the complete nested lifecycle order
+    Nested Lifecycle Hook Order
+      √ should execute the first nested test (1 ms)
+      √ should execute the second nested test in order (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        0.433 s, estimated 1 s
+Ran all test suites matching tests/lifecycle/fakeDatabase.test.js.

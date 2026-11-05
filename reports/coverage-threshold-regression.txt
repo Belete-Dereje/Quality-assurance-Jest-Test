@@ -1,0 +1,38 @@
+
+> university-testing-lab@1.0.0 test:coverage
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage --runInBand
+
+(node:24812) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/data-driven/payment.test.js
+PASS tests/data-driven/scholarship.test.js
+PASS tests/lifecycle/fakeDatabase.test.js
+PASS tests/data-driven/resultProcessor.test.js
+PASS tests/unit/registration.test.js
+PASS tests/unit/enrollment.test.js
+PASS tests/unit/tuition.test.js
+PASS tests/unit/grading.test.js
+PASS tests/coverage/admission.test.js
+PASS tests/unit/studentRepository.test.js
+----------------------|---------|----------|---------|---------|-------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------|---------|----------|---------|---------|-------------------
+All files             |   94.47 |    96.82 |   96.77 |   94.47 |                   
+ admission.js         |     100 |      100 |     100 |     100 |                   
+ enrollment.js        |     100 |      100 |     100 |     100 |                   
+ fakeDatabase.js      |     100 |      100 |     100 |     100 |                   
+ grading.js           |     100 |      100 |     100 |     100 |                   
+ payment.js           |     100 |      100 |     100 |     100 |                   
+ registration.js      |   95.95 |       92 |     100 |   95.95 | 37-38,67-68       
+ resultProcessor.js   |     100 |      100 |     100 |     100 |                   
+ scholarship.js       |    98.4 |    96.87 |     100 |    98.4 | 38-39             
+ studentRepository.js |     100 |      100 |     100 |     100 |                   
+ studentSupport.js    |       0 |        0 |       0 |       0 | 1-44              
+ tuition.js           |   97.54 |    92.85 |     100 |   97.54 | 40-41,50-51       
+----------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 10 passed, 10 total
+Tests:       227 passed, 227 total
+Snapshots:   0 total
+Time:        2.586 s, estimated 3 s
+Ran all test suites.

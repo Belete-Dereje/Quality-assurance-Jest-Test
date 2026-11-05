@@ -1,0 +1,46 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/data-driven/resultProcessor.test.js
+
+(node:14844) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/data-driven/resultProcessor.test.js
+  Student Result Processing Tests
+    √ Empty score array (4 ms)
+    √ Single score of zero
+    √ Single score of 100 (1 ms)
+    √ Single passing score (1 ms)
+    √ Single failing score (1 ms)
+    √ Duplicate scores (1 ms)
+    √ Multiple scores with duplicates
+    √ Average immediately below 50 (1 ms)
+    √ Average exactly 50 (1 ms)
+    √ Decimal scores
+    √ Multiple decimal scores
+    √ Scores of zero and 100 (1 ms)
+    √ Repeated failing scores
+    √ Multiple assessment scores (1 ms)
+    √ All assessment scores are zero
+    √ High decimal scores (1 ms)
+    √ should reject invalid score array: String instead of an array (10 ms)
+    √ should reject invalid score array: Null instead of an array (1 ms)
+    √ should reject invalid score array: Undefined instead of an array (2 ms)
+    √ should reject invalid score array: Object instead of an array (2 ms)
+    √ should reject invalid score array: Number instead of an array (2 ms)
+    √ should reject invalid score types: String score (1 ms)
+    √ should reject invalid score types: Nested array (1 ms)
+    √ should reject invalid score types: Null score (1 ms)
+    √ should reject invalid score types: Object score
+    √ should reject invalid score types: Boolean score (1 ms)
+    √ should reject non-finite scores: NaN score (1 ms)
+    √ should reject non-finite scores: Positive Infinity (1 ms)
+    √ should reject non-finite scores: Negative Infinity (1 ms)
+    √ should reject out-of-range scores: Negative score (1 ms)
+    √ should reject out-of-range scores: Score above 100 (1 ms)
+    √ should not modify the original scores array (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       32 passed, 32 total
+Snapshots:   0 total
+Time:        0.422 s, estimated 1 s
+Ran all test suites matching tests/data-driven/resultProcessor.test.js.

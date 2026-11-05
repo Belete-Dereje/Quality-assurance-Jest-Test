@@ -1,0 +1,4 @@
+node_modules/
+bin/
+*.pdf
+*.config.js

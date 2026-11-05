@@ -1,0 +1,34 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand
+
+(node:18772) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/unit/registration.test.js
+  Student Registration Tests
+    √ should register a student successfully (8 ms)
+    √ should reject a student aged 17 (14 ms)
+    √ should accept a student aged 18 (1 ms)
+    √ should accept a student aged 120 (1 ms)
+    √ should reject age above 120 (2 ms)
+    √ should reject decimal age (1 ms)
+    √ should reject blank student names (1 ms)
+    √ should reject a missing student name (2 ms)
+    √ should reject a non-string student name (1 ms)
+    √ should reject malformed email addresses (1 ms)
+    √ should reject email without a valid domain (1 ms)
+    √ should reject missing email (1 ms)
+    √ should reject non-string email (1 ms)
+    √ should reject missing student ID (1 ms)
+    √ should reject zero as student ID (3 ms)
+    √ should reject string student ID (1 ms)
+    √ should reject decimal student ID (1 ms)
+    √ should reject unsafe integer student ID (2 ms)
+    √ should not modify the original student object (1 ms)
+    √ should demonstrate toEqual and toStrictEqual (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       20 passed, 20 total
+Snapshots:   0 total
+Time:        0.514 s, estimated 1 s
+Ran all test suites.

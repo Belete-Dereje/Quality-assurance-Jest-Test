@@ -1,0 +1,39 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/unit/grading.test.js
+
+(node:3752) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/unit/grading.test.js
+  GradeBook Tests
+    √ should return 0 for an empty gradebook average (8 ms)
+    √ should return null for highest score when empty (2 ms)
+    √ should calculate the average of a single score (2 ms)
+    √ should calculate the average of multiple scores (5 ms)
+    √ should handle duplicate scores correctly (2 ms)
+    √ should accept scores of 0 and 100 (3 ms)
+    √ should maintain independent scores for different students (1 ms)
+    √ should reject invalid score type: "80" (15 ms)
+    √ should reject invalid score type: null (2 ms)
+    √ should reject invalid score type: undefined (2 ms)
+    √ should reject invalid score type: {} (1 ms)
+    √ should reject invalid score type: [] (1 ms)
+    √ should reject invalid score value: -1 (1 ms)
+    √ should reject invalid score value: 101 (1 ms)
+    √ should reject invalid score value: NaN (3 ms)
+    √ should reject invalid score value: Infinity (1 ms)
+    √ should reject invalid score value: -Infinity (1 ms)
+    √ should remove and return the lowest score
+    √ should remove only one occurrence of the lowest tied score
+    √ should remove the lowest score when only one exists
+    √ should return null when removing from an empty gradebook
+    √ should fail when average is 49.99 (1 ms)
+    √ should pass when average is exactly 50
+    √ should pass when average is 50.01 (1 ms)
+    √ should start with an empty gradebook for each test (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       25 passed, 25 total
+Snapshots:   0 total
+Time:        0.561 s, estimated 1 s
+Ran all test suites matching tests/unit/grading.test.js.

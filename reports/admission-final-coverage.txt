@@ -1,0 +1,34 @@
+
+> university-testing-lab@1.0.0 test:coverage
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage --runInBand --runTestsByPath tests/coverage/admission.test.js --collectCoverageFrom=src/admission.js
+
+(node:13384) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/coverage/admission.test.js
+  Admission System Coverage Tests
+    √ should accept an applicant without scholarship (4 ms)
+    √ should accept an applicant with scholarship
+    √ should reject an applicant aged 17 (1 ms)
+    √ should accept an applicant aged exactly 18
+    √ should reject an applicant scoring 59
+    √ should accept an applicant scoring exactly 60
+    √ should return pending when certificate is missing
+    √ should return pending when application fee is unpaid (1 ms)
+    √ should require international review at score 74
+    √ should accept international applicant scoring 75
+    √ should not require international review for domestic applicants (1 ms)
+    √ should accept applicant scoring 89 without scholarship
+    √ should award scholarship at score 90 (1 ms)
+    √ should prioritize missing certificate when fee is also unpaid
+
+--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |     100 |      100 |     100 |     100 |                   
+ admission.js |     100 |      100 |     100 |     100 |                   
+--------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Tests:       14 passed, 14 total
+Snapshots:   0 total
+Time:        0.734 s, estimated 1 s
+Ran all test suites within paths "tests/coverage/admission.test.js".

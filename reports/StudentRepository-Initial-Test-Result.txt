@@ -1,0 +1,33 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/unit/studentRepository.test.js
+
+(node:21556) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/unit/studentRepository.test.js
+  Student Repository - Shared State Problem
+    √ should add a student to the repository (3 ms)
+    × should start with an empty repository (3 ms)
+
+  ● Student Repository - Shared State Problem › should start with an empty repository
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+    [0m [90m 21 |[39m     test([32m"should start with an empty repository"[39m[33m,[39m () [33m=>[39m {
+     [90m 22 |[39m
+    [31m[1m>[22m[39m[90m 23 |[39m         expect(repository[33m.[39mcount())[33m.[39mtoBe([35m0[39m)[33m;[39m
+     [90m    |[39m                                    [31m[1m^[22m[39m
+     [90m 24 |[39m     })[33m;[39m
+     [90m 25 |[39m
+     [90m 26 |[39m })[33m;[39m[0m
+
+      at Object.<anonymous> (tests/unit/studentRepository.test.js:23:36)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 passed, 2 total
+Snapshots:   0 total
+Time:        0.365 s, estimated 1 s
+Ran all test suites matching tests/unit/studentRepository.test.js.

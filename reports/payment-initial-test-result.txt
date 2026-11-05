@@ -1,0 +1,384 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/data-driven/payment.test.js
+
+(node:21480) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/data-driven/payment.test.js
+  Tuition Payment Tests
+    × should reject zero amount (32 ms)
+    × should reject negative amount (5 ms)
+    × should reject NaN amount
+    × should reject infinite amount
+    × should reject negative infinite amount (3 ms)
+    × should reject string amount (1 ms)
+    × should reject null amount (3 ms)
+    × should reject missing amount
+    √ should reject unsupported payment method: cash (1 ms)
+    √ should reject unsupported payment method: mobile money (1 ms)
+    √ should reject unsupported payment method:  (1 ms)
+    × should reject unsupported payment method: null (3 ms)
+    × should reject unsupported payment method: 123 (4 ms)
+    × should reject invalid international flag: "true" (1 ms)
+    × should reject invalid international flag: 1 (1 ms)
+    × should reject invalid international flag: null
+    × should reject invalid international flag: undefined
+    card payment tests
+      √ should calculate domestic payment of 1000 correctly (5 ms)
+      √ should calculate international payment of 1000 correctly
+      × should calculate domestic decimal payment correctly (3 ms)
+      × should calculate international decimal payment correctly (1 ms)
+      √ should calculate domestic large payment correctly (1 ms)
+      √ should calculate international large payment correctly (1 ms)
+    bank payment tests
+      √ should calculate domestic payment of 1000 correctly (1 ms)
+      √ should calculate international payment of 1000 correctly (1 ms)
+      √ should calculate domestic decimal payment correctly (1 ms)
+      × should calculate international decimal payment correctly (1 ms)
+      √ should calculate domestic large payment correctly
+      √ should calculate international large payment correctly (1 ms)
+
+  ● Tuition Payment Tests › card payment tests › should calculate domestic decimal payment correctly
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 10.35
+    Received: 10.3525
+
+    [0m [90m 101 |[39m                 )[33m;[39m
+     [90m 102 |[39m
+    [31m[1m>[22m[39m[90m 103 |[39m                 expect(result)[33m.[39mtoBe(expected)[33m;[39m
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 104 |[39m             }
+     [90m 105 |[39m         )[33m;[39m
+     [90m 106 |[39m[0m
+
+      at tests/data-driven/payment.test.js:103:32
+
+  ● Tuition Payment Tests › card payment tests › should calculate international decimal payment correctly
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 10.5
+    Received: 10.504
+
+    [0m [90m 101 |[39m                 )[33m;[39m
+     [90m 102 |[39m
+    [31m[1m>[22m[39m[90m 103 |[39m                 expect(result)[33m.[39mtoBe(expected)[33m;[39m
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 104 |[39m             }
+     [90m 105 |[39m         )[33m;[39m
+     [90m 106 |[39m[0m
+
+      at tests/data-driven/payment.test.js:103:32
+
+  ● Tuition Payment Tests › bank payment tests › should calculate international decimal payment correctly
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 20.25
+    Received: 20.2515
+
+    [0m [90m 101 |[39m                 )[33m;[39m
+     [90m 102 |[39m
+    [31m[1m>[22m[39m[90m 103 |[39m                 expect(result)[33m.[39mtoBe(expected)[33m;[39m
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 104 |[39m             }
+     [90m 105 |[39m         )[33m;[39m
+     [90m 106 |[39m[0m
+
+      at tests/data-driven/payment.test.js:103:32
+
+  ● Tuition Payment Tests › should reject zero amount
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+    Received constructor: Error
+
+    Received message: "Invalid amount"
+
+        [0m [90m 3 |[39m
+         [90m 4 |[39m     [36mif[39m (amount [33m<=[39m [35m0[39m) {
+        [31m[1m>[22m[39m[90m 5 |[39m         [36mthrow[39m [36mnew[39m [33mError[39m([32m"Invalid amount"[39m)[33m;[39m
+         [90m   |[39m               [31m[1m^[22m[39m
+         [90m 6 |[39m     }
+         [90m 7 |[39m
+         [90m 8 |[39m     [36mlet[39m fee [33m=[39m [35m0[39m[33m;[39m[0m
+
+      at processPayment (src/payment.js:5:15)
+      at tests/data-driven/payment.test.js:157:17
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/data-driven/payment.test.js:158:15
+      at tests/data-driven/payment.test.js:158:15
+
+  ● Tuition Payment Tests › should reject negative amount
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+    Received constructor: Error
+
+    Received message: "Invalid amount"
+
+        [0m [90m 3 |[39m
+         [90m 4 |[39m     [36mif[39m (amount [33m<=[39m [35m0[39m) {
+        [31m[1m>[22m[39m[90m 5 |[39m         [36mthrow[39m [36mnew[39m [33mError[39m([32m"Invalid amount"[39m)[33m;[39m
+         [90m   |[39m               [31m[1m^[22m[39m
+         [90m 6 |[39m     }
+         [90m 7 |[39m
+         [90m 8 |[39m     [36mlet[39m fee [33m=[39m [35m0[39m[33m;[39m[0m
+
+      at processPayment (src/payment.js:5:15)
+      at tests/data-driven/payment.test.js:157:17
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/data-driven/payment.test.js:158:15
+      at tests/data-driven/payment.test.js:158:15
+
+  ● Tuition Payment Tests › should reject NaN amount
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 156 |[39m             expect(() [33m=>[39m
+     [90m 157 |[39m                 processPayment(amount[33m,[39m [32m"card"[39m[33m,[39m [36mfalse[39m)
+    [31m[1m>[22m[39m[90m 158 |[39m             )[33m.[39mtoThrow(error)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 159 |[39m         }
+     [90m 160 |[39m     )[33m;[39m
+     [90m 161 |[39m[0m
+
+      at tests/data-driven/payment.test.js:158:15
+
+  ● Tuition Payment Tests › should reject infinite amount
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 156 |[39m             expect(() [33m=>[39m
+     [90m 157 |[39m                 processPayment(amount[33m,[39m [32m"card"[39m[33m,[39m [36mfalse[39m)
+    [31m[1m>[22m[39m[90m 158 |[39m             )[33m.[39mtoThrow(error)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 159 |[39m         }
+     [90m 160 |[39m     )[33m;[39m
+     [90m 161 |[39m[0m
+
+      at tests/data-driven/payment.test.js:158:15
+
+  ● Tuition Payment Tests › should reject negative infinite amount
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+    Received constructor: Error
+
+    Received message: "Invalid amount"
+
+        [0m [90m 3 |[39m
+         [90m 4 |[39m     [36mif[39m (amount [33m<=[39m [35m0[39m) {
+        [31m[1m>[22m[39m[90m 5 |[39m         [36mthrow[39m [36mnew[39m [33mError[39m([32m"Invalid amount"[39m)[33m;[39m
+         [90m   |[39m               [31m[1m^[22m[39m
+         [90m 6 |[39m     }
+         [90m 7 |[39m
+         [90m 8 |[39m     [36mlet[39m fee [33m=[39m [35m0[39m[33m;[39m[0m
+
+      at processPayment (src/payment.js:5:15)
+      at tests/data-driven/payment.test.js:157:17
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/data-driven/payment.test.js:158:15
+      at tests/data-driven/payment.test.js:158:15
+
+  ● Tuition Payment Tests › should reject string amount
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 156 |[39m             expect(() [33m=>[39m
+     [90m 157 |[39m                 processPayment(amount[33m,[39m [32m"card"[39m[33m,[39m [36mfalse[39m)
+    [31m[1m>[22m[39m[90m 158 |[39m             )[33m.[39mtoThrow(error)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 159 |[39m         }
+     [90m 160 |[39m     )[33m;[39m
+     [90m 161 |[39m[0m
+
+      at tests/data-driven/payment.test.js:158:15
+
+  ● Tuition Payment Tests › should reject null amount
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+    Received constructor: Error
+
+    Received message: "Invalid amount"
+
+        [0m [90m 3 |[39m
+         [90m 4 |[39m     [36mif[39m (amount [33m<=[39m [35m0[39m) {
+        [31m[1m>[22m[39m[90m 5 |[39m         [36mthrow[39m [36mnew[39m [33mError[39m([32m"Invalid amount"[39m)[33m;[39m
+         [90m   |[39m               [31m[1m^[22m[39m
+         [90m 6 |[39m     }
+         [90m 7 |[39m
+         [90m 8 |[39m     [36mlet[39m fee [33m=[39m [35m0[39m[33m;[39m[0m
+
+      at processPayment (src/payment.js:5:15)
+      at tests/data-driven/payment.test.js:157:17
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/data-driven/payment.test.js:158:15
+      at tests/data-driven/payment.test.js:158:15
+
+  ● Tuition Payment Tests › should reject missing amount
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 156 |[39m             expect(() [33m=>[39m
+     [90m 157 |[39m                 processPayment(amount[33m,[39m [32m"card"[39m[33m,[39m [36mfalse[39m)
+    [31m[1m>[22m[39m[90m 158 |[39m             )[33m.[39mtoThrow(error)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 159 |[39m         }
+     [90m 160 |[39m     )[33m;[39m
+     [90m 161 |[39m[0m
+
+      at tests/data-driven/payment.test.js:158:15
+
+  ● Tuition Payment Tests › should reject unsupported payment method: null
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+    Received constructor: Error
+
+    Received message: "Unsupported payment method"
+
+        [0m [90m 15 |[39m     }
+         [90m 16 |[39m     [36melse[39m {
+        [31m[1m>[22m[39m[90m 17 |[39m         [36mthrow[39m [36mnew[39m [33mError[39m([32m"Unsupported payment method"[39m)[33m;[39m
+         [90m    |[39m               [31m[1m^[22m[39m
+         [90m 18 |[39m     }
+         [90m 19 |[39m
+         [90m 20 |[39m     [36mif[39m (isInternational) {[0m
+
+      at processPayment (src/payment.js:17:15)
+      at tests/data-driven/payment.test.js:190:17
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/data-driven/payment.test.js:191:15
+      at tests/data-driven/payment.test.js:191:15
+
+  ● Tuition Payment Tests › should reject unsupported payment method: 123
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+    Received constructor: Error
+
+    Received message: "Unsupported payment method"
+
+        [0m [90m 15 |[39m     }
+         [90m 16 |[39m     [36melse[39m {
+        [31m[1m>[22m[39m[90m 17 |[39m         [36mthrow[39m [36mnew[39m [33mError[39m([32m"Unsupported payment method"[39m)[33m;[39m
+         [90m    |[39m               [31m[1m^[22m[39m
+         [90m 18 |[39m     }
+         [90m 19 |[39m
+         [90m 20 |[39m     [36mif[39m (isInternational) {[0m
+
+      at processPayment (src/payment.js:17:15)
+      at tests/data-driven/payment.test.js:190:17
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/data-driven/payment.test.js:191:15
+      at tests/data-driven/payment.test.js:191:15
+
+  ● Tuition Payment Tests › should reject invalid international flag: "true"
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 206 |[39m             expect(() [33m=>[39m
+     [90m 207 |[39m                 processPayment([35m100[39m[33m,[39m [32m"card"[39m[33m,[39m isInternational)
+    [31m[1m>[22m[39m[90m 208 |[39m             )[33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 209 |[39m         }
+     [90m 210 |[39m     )[33m;[39m
+     [90m 211 |[39m[0m
+
+      at tests/data-driven/payment.test.js:208:15
+
+  ● Tuition Payment Tests › should reject invalid international flag: 1
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 206 |[39m             expect(() [33m=>[39m
+     [90m 207 |[39m                 processPayment([35m100[39m[33m,[39m [32m"card"[39m[33m,[39m isInternational)
+    [31m[1m>[22m[39m[90m 208 |[39m             )[33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 209 |[39m         }
+     [90m 210 |[39m     )[33m;[39m
+     [90m 211 |[39m[0m
+
+      at tests/data-driven/payment.test.js:208:15
+
+  ● Tuition Payment Tests › should reject invalid international flag: null
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 206 |[39m             expect(() [33m=>[39m
+     [90m 207 |[39m                 processPayment([35m100[39m[33m,[39m [32m"card"[39m[33m,[39m isInternational)
+    [31m[1m>[22m[39m[90m 208 |[39m             )[33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 209 |[39m         }
+     [90m 210 |[39m     )[33m;[39m
+     [90m 211 |[39m[0m
+
+      at tests/data-driven/payment.test.js:208:15
+
+  ● Tuition Payment Tests › should reject invalid international flag: undefined
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 206 |[39m             expect(() [33m=>[39m
+     [90m 207 |[39m                 processPayment([35m100[39m[33m,[39m [32m"card"[39m[33m,[39m isInternational)
+    [31m[1m>[22m[39m[90m 208 |[39m             )[33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 209 |[39m         }
+     [90m 210 |[39m     )[33m;[39m
+     [90m 211 |[39m[0m
+
+      at tests/data-driven/payment.test.js:208:15
+
+Test Suites: 1 failed, 1 total
+Tests:       17 failed, 12 passed, 29 total
+Snapshots:   0 total
+Time:        0.582 s, estimated 1 s
+Ran all test suites matching tests/data-driven/payment.test.js.

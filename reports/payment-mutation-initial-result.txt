@@ -1,0 +1,21 @@
+StrykerJS Payment Mutation Test - Initial Run (before improvement)
+Config: stryker.payment.config.js
+Command: npm run mutation:payment
+
+File        | % Mutation score | # killed | # timeout | # survived | # no cov | # errors
+payment.js  | 88.33            | 53       | 0         | 7          | 0        | 0
+
+Manual score = (53 + 0) / (53 + 0 + 7 + 0) * 100 = 88.33%
+Stryker score = 88.33%
+
+Surviving mutants:
+ID 3  ArithmeticOperator    line 32: amount + Number.EPSILON -> amount - Number.EPSILON
+ID 11 StringLiteral         line 39: "Payment amount must be a number" -> ""
+ID 21 StringLiteral         line 45: "Payment amount must be positive and finite" -> ""
+ID 28 StringLiteral         line 51: "Payment method must be a string" -> ""
+ID 40 StringLiteral         line 56: "Unsupported payment method" -> ""
+ID 47 StringLiteral         line 62: "International payment flag must be a Boolean" -> ""
+ID 54 ConditionalExpression line 72: else if (method === "bank") -> else if (true)
+
+Full machine-readable report: reports/mutation/payment-initial.json
+Full HTML report: reports/mutation/payment-initial.html

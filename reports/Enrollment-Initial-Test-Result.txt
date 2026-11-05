@@ -1,0 +1,101 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/unit/enrollment.test.js
+
+(node:5724) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/unit/enrollment.test.js
+  Enrollment Management Tests
+    √ should enroll a student and send a notification (9 ms)
+    × should reject duplicate enrollment (2 ms)
+    √ should allow different students to share the same course (2 ms)
+    × should roll back enrollment when notification fails (4 ms)
+    × should remove an enrollment and return true (1 ms)
+    × should return false when enrollment does not exist
+    × should return defensive copies from getEnrollments (4 ms)
+    √ should maintain independent enrollment records (1 ms)
+
+  ● Enrollment Management Tests › should reject duplicate enrollment
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+    [0m [90m 42 |[39m
+     [90m 43 |[39m         expect(() [33m=>[39m manager[33m.[39menroll([35m101[39m[33m,[39m [32m"CS301"[39m))
+    [31m[1m>[22m[39m[90m 44 |[39m             [33m.[39mtoThrow()[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 45 |[39m
+     [90m 46 |[39m         expect(manager[33m.[39menrollments)[33m.[39mtoHaveLength([35m1[39m)[33m;[39m
+     [90m 47 |[39m[0m
+
+      at Object.<anonymous> (tests/unit/enrollment.test.js:44:14)
+
+  ● Enrollment Management Tests › should roll back enrollment when notification fails
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  [{"courseId": "CS301", "studentId": 101}]
+
+    [0m [90m 76 |[39m             [33m.[39mtoThrow(notificationError)[33m;[39m
+     [90m 77 |[39m
+    [31m[1m>[22m[39m[90m 78 |[39m         expect(manager[33m.[39menrollments)[33m.[39mtoHaveLength([35m0[39m)[33m;[39m
+     [90m    |[39m                                     [31m[1m^[22m[39m
+     [90m 79 |[39m     })[33m;[39m
+     [90m 80 |[39m
+     [90m 81 |[39m     [90m// TEST 5: Successfully unenroll a student[39m[0m
+
+      at Object.<anonymous> (tests/unit/enrollment.test.js:78:37)
+
+  ● Enrollment Management Tests › should remove an enrollment and return true
+
+    TypeError: manager.unenroll is not a function
+
+    [0m [90m 84 |[39m         manager[33m.[39menroll([35m101[39m[33m,[39m [32m"CS301"[39m)[33m;[39m
+     [90m 85 |[39m
+    [31m[1m>[22m[39m[90m 86 |[39m         [36mconst[39m result [33m=[39m manager[33m.[39munenroll([35m101[39m[33m,[39m [32m"CS301"[39m)[33m;[39m
+     [90m    |[39m                                [31m[1m^[22m[39m
+     [90m 87 |[39m
+     [90m 88 |[39m         expect(result)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m 89 |[39m         expect(manager[33m.[39menrollments)[33m.[39mtoHaveLength([35m0[39m)[33m;[39m[0m
+
+      at Object.<anonymous> (tests/unit/enrollment.test.js:86:32)
+
+  ● Enrollment Management Tests › should return false when enrollment does not exist
+
+    TypeError: manager.unenroll is not a function
+
+    [0m [90m 93 |[39m     test([32m"should return false when enrollment does not exist"[39m[33m,[39m () [33m=>[39m {
+     [90m 94 |[39m
+    [31m[1m>[22m[39m[90m 95 |[39m         [36mconst[39m result [33m=[39m manager[33m.[39munenroll([35m101[39m[33m,[39m [32m"CS301"[39m)[33m;[39m
+     [90m    |[39m                                [31m[1m^[22m[39m
+     [90m 96 |[39m
+     [90m 97 |[39m         expect(result)[33m.[39mtoBe([36mfalse[39m)[33m;[39m
+     [90m 98 |[39m         expect(manager[33m.[39menrollments)[33m.[39mtoHaveLength([35m0[39m)[33m;[39m[0m
+
+      at Object.<anonymous> (tests/unit/enrollment.test.js:95:32)
+
+  ● Enrollment Management Tests › should return defensive copies from getEnrollments
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "CS301"
+    Received: "CHANGED"
+
+    [0m [90m 111 |[39m         [90m// The original record must remain unchanged[39m
+     [90m 112 |[39m         expect(manager[33m.[39mgetEnrollments([35m101[39m)[[35m0[39m][33m.[39mcourseId)
+    [31m[1m>[22m[39m[90m 113 |[39m             [33m.[39mtoBe([32m"CS301"[39m)[33m;[39m
+     [90m     |[39m              [31m[1m^[22m[39m
+     [90m 114 |[39m
+     [90m 115 |[39m         [90m// Modifying the returned array must not affect storage[39m
+     [90m 116 |[39m         records[33m.[39mpush({[0m
+
+      at Object.<anonymous> (tests/unit/enrollment.test.js:113:14)
+
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 3 passed, 8 total
+Snapshots:   0 total
+Time:        0.473 s, estimated 1 s
+Ran all test suites matching tests/unit/enrollment.test.js.

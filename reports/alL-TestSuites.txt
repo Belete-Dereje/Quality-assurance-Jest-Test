@@ -1,0 +1,17 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand
+
+(node:22680) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/unit/grading.test.js
+PASS tests/unit/registration.test.js
+PASS tests/unit/tuition.test.js
+PASS tests/unit/studentRepository.test.js
+PASS tests/unit/enrollment.test.js
+
+Test Suites: 5 passed, 5 total
+Tests:       96 passed, 96 total
+Snapshots:   0 total
+Time:        1.187 s, estimated 2 s
+Ran all test suites.

@@ -1,0 +1,61 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/data-driven/scholarship.test.js
+
+(node:19568) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/data-driven/scholarship.test.js
+  Scholarship Eligibility Tests
+    √ Exact full scholarship boundaries (6 ms)
+    √ Student exceeds all full scholarship requirements (1 ms)
+    √ Exact partial scholarship boundaries (1 ms)
+    √ Student qualifies for partial scholarship
+    √ Average below full threshold but qualifies for partial
+    √ Attendance below full threshold but qualifies for partial
+    √ Credits below full threshold but qualifies for partial
+    √ Average below partial threshold (1 ms)
+    √ Attendance below partial threshold
+    √ Credits below partial threshold
+    √ Reject otherwise full-eligible student with disciplinary action (1 ms)
+    √ Reject otherwise partial-eligible student with disciplinary action
+    √ Average exactly 80 (1 ms)
+    √ Average exactly 90
+    √ Attendance exactly 85 (1 ms)
+    √ Attendance exactly 95
+    √ Credits exactly 12
+    √ Credits exactly 15 (1 ms)
+    √ Average below 80 with excellent attendance and credits
+    √ All academic requirements fail
+    √ Average 89 with full attendance and minimum full credits (1 ms)
+    √ Partial scholarship with exactly minimum attendance
+    √ Full scholarship (1 ms)
+    √ Partial scholarship (1 ms)
+    √ Rejected student
+    √ Not eligible (1 ms)
+    √ should reject invalid types: Average provided as a string (16 ms)
+    √ should reject invalid types: Average provided as null (1 ms)
+    √ should reject invalid types: Attendance provided as a string (1 ms)
+    √ should reject invalid types: Attendance provided as a Boolean (2 ms)
+    √ should reject invalid types: Credits provided as a string (1 ms)
+    √ should reject invalid types: Disciplinary action provided as a string
+    √ should reject invalid types: Disciplinary action provided as a number
+    √ should reject invalid types: Average property is missing
+    √ should reject invalid types: Attendance property is missing (1 ms)
+    √ should reject invalid types: Credits property is missing (1 ms)
+    √ should reject invalid types: Disciplinary action property is missing (2 ms)
+    √ should reject invalid numeric values: Average below zero (2 ms)
+    √ should reject invalid numeric values: Average above 100 (1 ms)
+    √ should reject invalid numeric values: Average is NaN (1 ms)
+    √ should reject invalid numeric values: Average is Infinity (1 ms)
+    √ should reject invalid numeric values: Attendance below zero (1 ms)
+    √ should reject invalid numeric values: Attendance above 100 (1 ms)
+    √ should reject invalid numeric values: Attendance is NaN (1 ms)
+    √ should reject invalid numeric values: Credits cannot be negative (2 ms)
+    √ should reject invalid numeric values: Credits cannot be decimal (4 ms)
+    √ should reject invalid numeric values: Credits cannot be Infinity (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       47 passed, 47 total
+Snapshots:   0 total
+Time:        0.496 s, estimated 1 s
+Ran all test suites matching tests/data-driven/scholarship.test.js.

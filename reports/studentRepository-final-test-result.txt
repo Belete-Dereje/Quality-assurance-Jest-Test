@@ -1,0 +1,28 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/unit/studentRepository.test.js
+
+(node:3820) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/unit/studentRepository.test.js
+  Student Repository Tests
+    Adding Students
+      √ should add a student successfully (7 ms)
+      √ should reject duplicate student IDs (15 ms)
+      √ should allow students with different IDs (1 ms)
+    Finding Students
+      √ should find a student using their ID (1 ms)
+      √ should return undefined for a nonexistent student (1 ms)
+    Removing Students
+      √ should remove a student using their ID (1 ms)
+      √ should keep other students when one is removed (1 ms)
+    Test Isolation and Cleanup
+      √ should start with an empty repository
+      √ should allow spying on the count method (2 ms)
+      √ should start independently of previous tests
+
+Test Suites: 1 passed, 1 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        0.512 s, estimated 1 s
+Ran all test suites matching tests/unit/studentRepository.test.js.

@@ -1,0 +1,46 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/data-driven/payment.test.js
+
+(node:15084) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/data-driven/payment.test.js
+  Tuition Payment Tests
+    √ should reject zero amount (14 ms)
+    √ should reject negative amount (1 ms)
+    √ should reject NaN amount (1 ms)
+    √ should reject infinite amount (1 ms)
+    √ should reject negative infinite amount (1 ms)
+    √ should reject string amount (1 ms)
+    √ should reject null amount (3 ms)
+    √ should reject missing amount (1 ms)
+    √ should reject unsupported payment method: cash (1 ms)
+    √ should reject unsupported payment method: mobile money (1 ms)
+    √ should reject unsupported payment method:  (1 ms)
+    √ should reject unsupported payment method: null (1 ms)
+    √ should reject unsupported payment method: 123 (1 ms)
+    √ should reject unsupported payment method: undefined (1 ms)
+    √ should reject invalid international flag: "true" (1 ms)
+    √ should reject invalid international flag: 1 (1 ms)
+    √ should reject invalid international flag: null (1 ms)
+    √ should reject invalid international flag: undefined (1 ms)
+    card payment tests
+      √ should calculate domestic payment of 1000 correctly (4 ms)
+      √ should calculate international payment of 1000 correctly (1 ms)
+      √ should calculate domestic decimal payment correctly (1 ms)
+      √ should calculate international decimal payment correctly
+      √ should calculate domestic large payment correctly (1 ms)
+      √ should calculate international large payment correctly (1 ms)
+    bank payment tests
+      √ should calculate domestic payment of 1000 correctly
+      √ should calculate international payment of 1000 correctly (1 ms)
+      √ should calculate domestic decimal payment correctly (1 ms)
+      √ should calculate international decimal payment correctly
+      √ should calculate domestic large payment correctly (1 ms)
+      √ should calculate international large payment correctly
+
+Test Suites: 1 passed, 1 total
+Tests:       30 passed, 30 total
+Snapshots:   0 total
+Time:        0.441 s, estimated 1 s
+Ran all test suites matching tests/data-driven/payment.test.js.

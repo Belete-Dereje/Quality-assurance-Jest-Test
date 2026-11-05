@@ -1,0 +1,235 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/unit/grading.test.js
+
+(node:18404) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/unit/grading.test.js
+  GradeBook Tests
+    √ should return 0 for an empty gradebook average (3 ms)
+    × should return null for highest score when empty (4 ms)
+    √ should calculate the average of a single score (1 ms)
+    √ should calculate the average of multiple scores (1 ms)
+    √ should handle duplicate scores correctly (1 ms)
+    √ should accept scores of 0 and 100 (1 ms)
+    √ should maintain independent scores for different students
+    × should reject invalid score type: "80"
+    × should reject invalid score type: null (1 ms)
+    × should reject invalid score type: undefined (1 ms)
+    × should reject invalid score type: {} (1 ms)
+    × should reject invalid score type: [] (1 ms)
+    × should reject invalid score value: -1
+    × should reject invalid score value: 101
+    × should reject invalid score value: NaN
+    × should reject invalid score value: Infinity (1 ms)
+    × should reject invalid score value: -Infinity
+    √ should remove and return the lowest score (1 ms)
+    √ should remove only one occurrence of the lowest tied score
+    √ should remove the lowest score when only one exists
+    √ should return null when removing from an empty gradebook
+    √ should fail when average is 49.99
+    √ should pass when average is exactly 50
+    √ should pass when average is 50.01
+    √ should start with an empty gradebook for each test
+
+  ● GradeBook Tests › should return null for highest score when empty
+
+    expect(received).toBeNull()
+
+    Received: -Infinity
+
+    [0m [90m 18 |[39m     [90m// TEST 2: Empty gradebook highest score[39m
+     [90m 19 |[39m     test([32m"should return null for highest score when empty"[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 20 |[39m         expect(gradeBook[33m.[39mgetHighestScore())[33m.[39mtoBeNull()[33m;[39m
+     [90m    |[39m                                             [31m[1m^[22m[39m
+     [90m 21 |[39m     })[33m;[39m
+     [90m 22 |[39m
+     [90m 23 |[39m     [90m// TEST 3: Single score[39m[0m
+
+      at Object.<anonymous> (tests/unit/grading.test.js:20:45)
+
+  ● GradeBook Tests › should reject invalid score type: "80"
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 82 |[39m     ])([32m"should reject invalid score type: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 83 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 84 |[39m             [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 85 |[39m     })[33m;[39m
+     [90m 86 |[39m
+     [90m 87 |[39m     [90m// TEST 9: Reject scores outside the valid range[39m[0m
+
+      at tests/unit/grading.test.js:84:14
+
+  ● GradeBook Tests › should reject invalid score type: null
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 82 |[39m     ])([32m"should reject invalid score type: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 83 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 84 |[39m             [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 85 |[39m     })[33m;[39m
+     [90m 86 |[39m
+     [90m 87 |[39m     [90m// TEST 9: Reject scores outside the valid range[39m[0m
+
+      at tests/unit/grading.test.js:84:14
+
+  ● GradeBook Tests › should reject invalid score type: undefined
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 82 |[39m     ])([32m"should reject invalid score type: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 83 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 84 |[39m             [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 85 |[39m     })[33m;[39m
+     [90m 86 |[39m
+     [90m 87 |[39m     [90m// TEST 9: Reject scores outside the valid range[39m[0m
+
+      at tests/unit/grading.test.js:84:14
+
+  ● GradeBook Tests › should reject invalid score type: {}
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 82 |[39m     ])([32m"should reject invalid score type: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 83 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 84 |[39m             [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 85 |[39m     })[33m;[39m
+     [90m 86 |[39m
+     [90m 87 |[39m     [90m// TEST 9: Reject scores outside the valid range[39m[0m
+
+      at tests/unit/grading.test.js:84:14
+
+  ● GradeBook Tests › should reject invalid score type: []
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 82 |[39m     ])([32m"should reject invalid score type: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 83 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 84 |[39m             [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 85 |[39m     })[33m;[39m
+     [90m 86 |[39m
+     [90m 87 |[39m     [90m// TEST 9: Reject scores outside the valid range[39m[0m
+
+      at tests/unit/grading.test.js:84:14
+
+  ● GradeBook Tests › should reject invalid score value: -1
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 94 |[39m     ])([32m"should reject invalid score value: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 95 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 96 |[39m             [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 97 |[39m     })[33m;[39m
+     [90m 98 |[39m
+     [90m 99 |[39m     [90m// TEST 10: Remove the lowest score[39m[0m
+
+      at tests/unit/grading.test.js:96:14
+
+  ● GradeBook Tests › should reject invalid score value: 101
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 94 |[39m     ])([32m"should reject invalid score value: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 95 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 96 |[39m             [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 97 |[39m     })[33m;[39m
+     [90m 98 |[39m
+     [90m 99 |[39m     [90m// TEST 10: Remove the lowest score[39m[0m
+
+      at tests/unit/grading.test.js:96:14
+
+  ● GradeBook Tests › should reject invalid score value: NaN
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 94 |[39m     ])([32m"should reject invalid score value: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 95 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 96 |[39m             [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 97 |[39m     })[33m;[39m
+     [90m 98 |[39m
+     [90m 99 |[39m     [90m// TEST 10: Remove the lowest score[39m[0m
+
+      at tests/unit/grading.test.js:96:14
+
+  ● GradeBook Tests › should reject invalid score value: Infinity
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 94 |[39m     ])([32m"should reject invalid score value: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 95 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 96 |[39m             [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 97 |[39m     })[33m;[39m
+     [90m 98 |[39m
+     [90m 99 |[39m     [90m// TEST 10: Remove the lowest score[39m[0m
+
+      at tests/unit/grading.test.js:96:14
+
+  ● GradeBook Tests › should reject invalid score value: -Infinity
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 94 |[39m     ])([32m"should reject invalid score value: %p"[39m[33m,[39m (score) [33m=>[39m {
+     [90m 95 |[39m         expect(() [33m=>[39m gradeBook[33m.[39maddScore(score))
+    [31m[1m>[22m[39m[90m 96 |[39m             [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 97 |[39m     })[33m;[39m
+     [90m 98 |[39m
+     [90m 99 |[39m     [90m// TEST 10: Remove the lowest score[39m[0m
+
+      at tests/unit/grading.test.js:96:14
+
+Test Suites: 1 failed, 1 total
+Tests:       11 failed, 14 passed, 25 total
+Snapshots:   0 total
+Time:        0.478 s, estimated 1 s
+Ran all test suites matching tests/unit/grading.test.js.

@@ -1,0 +1,22 @@
+
+> university-testing-lab@1.0.0 test:coverage
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage --runInBand --runTestsByPath tests/coverage/admission.test.js --collectCoverageFrom=src/admission.js
+
+(node:9312) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/coverage/admission.test.js
+  Admission System Coverage Tests
+    √ should accept an applicant without scholarship (8 ms)
+    √ should accept an applicant with scholarship (1 ms)
+
+--------------|---------|----------|---------|---------|-------------------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s             
+--------------|---------|----------|---------|---------|-------------------------------
+All files     |   56.89 |    33.33 |     100 |   56.89 |                               
+ admission.js |   56.89 |    33.33 |     100 |   56.89 | 13-17,20-24,27-31,34-38,41-45 
+--------------|---------|----------|---------|---------|-------------------------------
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        1.066 s
+Ran all test suites within paths "tests/coverage/admission.test.js".

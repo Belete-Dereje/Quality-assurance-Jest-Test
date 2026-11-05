@@ -1,0 +1,226 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/data-driven/resultProcessor.test.js
+
+(node:10884) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/data-driven/resultProcessor.test.js
+  Student Result Processing Tests
+    √ Empty score array (5 ms)
+    √ Single score of zero (1 ms)
+    √ Single score of 100
+    √ Single passing score (1 ms)
+    √ Single failing score (1 ms)
+    √ Duplicate scores
+    √ Multiple scores with duplicates
+    √ Average immediately below 50
+    √ Average exactly 50
+    √ Decimal scores (1 ms)
+    √ Multiple decimal scores
+    √ Scores of zero and 100 (1 ms)
+    √ Repeated failing scores
+    √ Multiple assessment scores
+    √ All assessment scores are zero
+    √ High decimal scores
+    √ should reject invalid score array: String instead of an array (13 ms)
+    √ should reject invalid score array: Null instead of an array (2 ms)
+    √ should reject invalid score array: Undefined instead of an array (1 ms)
+    √ should reject invalid score array: Object instead of an array (2 ms)
+    √ should reject invalid score array: Number instead of an array (1 ms)
+    × should reject invalid score types: String score (2 ms)
+    × should reject invalid score types: Nested array
+    × should reject invalid score types: Null score
+    × should reject invalid score types: Object score (1 ms)
+    × should reject invalid score types: Boolean score (1 ms)
+    × should reject non-finite scores: NaN score (1 ms)
+    × should reject non-finite scores: Positive Infinity
+    × should reject non-finite scores: Negative Infinity (1 ms)
+    × should reject out-of-range scores: Negative score (1 ms)
+    × should reject out-of-range scores: Score above 100
+    √ should not modify the original scores array (1 ms)
+
+  ● Student Result Processing Tests › should reject invalid score types: String score
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 79 |[39m
+     [90m 80 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 81 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 82 |[39m         }
+     [90m 83 |[39m     )[33m;[39m
+     [90m 84 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:81:18
+
+  ● Student Result Processing Tests › should reject invalid score types: Nested array
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 79 |[39m
+     [90m 80 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 81 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 82 |[39m         }
+     [90m 83 |[39m     )[33m;[39m
+     [90m 84 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:81:18
+
+  ● Student Result Processing Tests › should reject invalid score types: Null score
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 79 |[39m
+     [90m 80 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 81 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 82 |[39m         }
+     [90m 83 |[39m     )[33m;[39m
+     [90m 84 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:81:18
+
+  ● Student Result Processing Tests › should reject invalid score types: Object score
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 79 |[39m
+     [90m 80 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 81 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 82 |[39m         }
+     [90m 83 |[39m     )[33m;[39m
+     [90m 84 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:81:18
+
+  ● Student Result Processing Tests › should reject invalid score types: Boolean score
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 79 |[39m
+     [90m 80 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 81 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 82 |[39m         }
+     [90m 83 |[39m     )[33m;[39m
+     [90m 84 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:81:18
+
+  ● Student Result Processing Tests › should reject non-finite scores: NaN score
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 103 |[39m
+     [90m 104 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 105 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 106 |[39m         }
+     [90m 107 |[39m     )[33m;[39m
+     [90m 108 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:105:18
+
+  ● Student Result Processing Tests › should reject non-finite scores: Positive Infinity
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 103 |[39m
+     [90m 104 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 105 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 106 |[39m         }
+     [90m 107 |[39m     )[33m;[39m
+     [90m 108 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:105:18
+
+  ● Student Result Processing Tests › should reject non-finite scores: Negative Infinity
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 103 |[39m
+     [90m 104 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 105 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 106 |[39m         }
+     [90m 107 |[39m     )[33m;[39m
+     [90m 108 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:105:18
+
+  ● Student Result Processing Tests › should reject out-of-range scores: Negative score
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 123 |[39m
+     [90m 124 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 125 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 126 |[39m         }
+     [90m 127 |[39m     )[33m;[39m
+     [90m 128 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:125:18
+
+  ● Student Result Processing Tests › should reject out-of-range scores: Score above 100
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 123 |[39m
+     [90m 124 |[39m             expect(() [33m=>[39m processResult(scores))
+    [31m[1m>[22m[39m[90m 125 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 126 |[39m         }
+     [90m 127 |[39m     )[33m;[39m
+     [90m 128 |[39m[0m
+
+      at tests/data-driven/resultProcessor.test.js:125:18
+
+Test Suites: 1 failed, 1 total
+Tests:       10 failed, 22 passed, 32 total
+Snapshots:   0 total
+Time:        0.453 s, estimated 1 s
+Ran all test suites matching tests/data-driven/resultProcessor.test.js.

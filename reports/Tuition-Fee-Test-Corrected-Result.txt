@@ -1,0 +1,47 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/unit/tuition.test.js
+
+(node:8208) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS tests/unit/tuition.test.js
+  Tuition Calculation Tests
+    √ should return zero tuition when there are no courses (4 ms)
+    √ should calculate tuition for one course
+    √ should calculate tuition for multiple courses
+    √ should use zero scholarship when rate is omitted (1 ms)
+    √ should use zero scholarship when rate is undefined (1 ms)
+    √ should reject null scholarship rate (10 ms)
+    √ should reject incorrect credit hour type: "3" (1 ms)
+    √ should reject incorrect credit hour type: null (1 ms)
+    √ should reject incorrect credit hour type: {}
+    √ should reject invalid credit hours: -1 (1 ms)
+    √ should reject invalid credit hours: 1.5 (1 ms)
+    √ should reject invalid credit hours: NaN
+    √ should reject invalid credit hours: Infinity
+    √ should reject incorrect price type: "100" (3 ms)
+    √ should reject incorrect price type: null (1 ms)
+    √ should reject incorrect price type: [] (1 ms)
+    √ should reject invalid price: -10 (1 ms)
+    √ should reject invalid price: NaN (1 ms)
+    √ should reject invalid price: Infinity
+    √ should reject invalid price: -Infinity
+    √ should reject incorrect scholarship type: "0.2"
+    √ should reject incorrect scholarship type: null
+    √ should reject incorrect scholarship type: true
+    √ should reject invalid scholarship rate: -0.1 (1 ms)
+    √ should reject invalid scholarship rate: 1.1 (1 ms)
+    √ should reject invalid scholarship rate: NaN (1 ms)
+    √ should reject invalid scholarship rate: Infinity (1 ms)
+    √ should accept zero credit hours and zero price
+    √ should round tuition amounts to two decimal places
+    √ should not modify the original course objects (1 ms)
+    √ should find the course with the highest total cost (1 ms)
+    √ should return null when no courses exist (1 ms)
+    √ should return the first course when there is a tie
+
+Test Suites: 1 passed, 1 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        0.387 s, estimated 1 s
+Ran all test suites matching tests/unit/tuition.test.js.

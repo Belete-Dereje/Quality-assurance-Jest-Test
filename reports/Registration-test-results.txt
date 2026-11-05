@@ -1,0 +1,188 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand
+
+(node:16180) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/unit/registration.test.js
+  Student Registration Tests
+    √ should register a student successfully (6 ms)
+    √ should reject a student aged 17 (12 ms)
+    √ should accept a student aged 18 (1 ms)
+    √ should accept a student aged 120 (1 ms)
+    × should reject age above 120 (1 ms)
+    × should reject decimal age
+    √ should reject blank student names (1 ms)
+    √ should reject a missing student name (1 ms)
+    √ should reject a non-string student name (1 ms)
+    × should reject malformed email addresses (1 ms)
+    × should reject email without a valid domain
+    √ should reject missing email (1 ms)
+    √ should reject non-string email (1 ms)
+    × should reject missing student ID (1 ms)
+    × should reject zero as student ID (1 ms)
+    × should reject string student ID (1 ms)
+    × should reject decimal student ID
+    × should reject unsafe integer student ID
+
+  ● Student Registration Tests › should reject age above 120
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+    [0m [90m 55 |[39m         expect(() [33m=>[39m
+     [90m 56 |[39m             registerStudent({ [33m...[39mvalidStudent[33m,[39m age[33m:[39m [35m121[39m })
+    [31m[1m>[22m[39m[90m 57 |[39m         )[33m.[39mtoThrow()[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 58 |[39m     })[33m;[39m
+     [90m 59 |[39m
+     [90m 60 |[39m     [90m// TEST 6: Decimal age must be rejected[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:57:11)
+
+  ● Student Registration Tests › should reject decimal age
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+    [0m [90m 62 |[39m         expect(() [33m=>[39m
+     [90m 63 |[39m             registerStudent({ [33m...[39mvalidStudent[33m,[39m age[33m:[39m [35m20.5[39m })
+    [31m[1m>[22m[39m[90m 64 |[39m         )[33m.[39mtoThrow()[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 65 |[39m     })[33m;[39m
+     [90m 66 |[39m
+     [90m 67 |[39m     [90m// TEST 7: Blank name must be rejected[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:64:11)
+
+  ● Student Registration Tests › should reject malformed email addresses
+
+    expect(received).toThrow(expected)
+
+    Expected substring: "Invalid email"
+
+    Received function did not throw
+
+    [0m [90m 92 |[39m         expect(() [33m=>[39m
+     [90m 93 |[39m             registerStudent({ [33m...[39mvalidStudent[33m,[39m email[33m:[39m [32m"abc@"[39m })
+    [31m[1m>[22m[39m[90m 94 |[39m         )[33m.[39mtoThrow([32m"Invalid email"[39m)[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 95 |[39m     })[33m;[39m
+     [90m 96 |[39m
+     [90m 97 |[39m     [90m// TEST 11: Email without a domain must be rejected[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:94:11)
+
+  ● Student Registration Tests › should reject email without a valid domain
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+    [0m [90m 102 |[39m                 email[33m:[39m [32m"student@example"[39m
+     [90m 103 |[39m             })
+    [31m[1m>[22m[39m[90m 104 |[39m         )[33m.[39mtoThrow()[33m;[39m
+     [90m     |[39m           [31m[1m^[22m[39m
+     [90m 105 |[39m     })[33m;[39m
+     [90m 106 |[39m
+     [90m 107 |[39m     [90m// TEST 12: Missing email must be rejected[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:104:11)
+
+  ● Student Registration Tests › should reject missing student ID
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 127 |[39m
+     [90m 128 |[39m         expect(() [33m=>[39m registerStudent(student))
+    [31m[1m>[22m[39m[90m 129 |[39m             [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m              [31m[1m^[22m[39m
+     [90m 130 |[39m     })[33m;[39m
+     [90m 131 |[39m
+     [90m 132 |[39m     [90m// TEST 15: Zero ID must be rejected[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:129:14)
+
+  ● Student Registration Tests › should reject zero as student ID
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 134 |[39m         expect(() [33m=>[39m
+     [90m 135 |[39m             registerStudent({ [33m...[39mvalidStudent[33m,[39m id[33m:[39m [35m0[39m })
+    [31m[1m>[22m[39m[90m 136 |[39m         )[33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m           [31m[1m^[22m[39m
+     [90m 137 |[39m     })[33m;[39m
+     [90m 138 |[39m
+     [90m 139 |[39m     [90m// TEST 16: String ID must be rejected[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:136:11)
+
+  ● Student Registration Tests › should reject string student ID
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 141 |[39m         expect(() [33m=>[39m
+     [90m 142 |[39m             registerStudent({ [33m...[39mvalidStudent[33m,[39m id[33m:[39m [32m"ABC"[39m })
+    [31m[1m>[22m[39m[90m 143 |[39m         )[33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m           [31m[1m^[22m[39m
+     [90m 144 |[39m     })[33m;[39m
+     [90m 145 |[39m
+     [90m 146 |[39m     [90m// TEST 17: Decimal ID must be rejected[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:143:11)
+
+  ● Student Registration Tests › should reject decimal student ID
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 148 |[39m         expect(() [33m=>[39m
+     [90m 149 |[39m             registerStudent({ [33m...[39mvalidStudent[33m,[39m id[33m:[39m [35m1.5[39m })
+    [31m[1m>[22m[39m[90m 150 |[39m         )[33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m           [31m[1m^[22m[39m
+     [90m 151 |[39m     })[33m;[39m
+     [90m 152 |[39m
+     [90m 153 |[39m     [90m// TEST 18: Unsafe integer ID must be rejected[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:150:11)
+
+  ● Student Registration Tests › should reject unsafe integer student ID
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 158 |[39m                 id[33m:[39m [33mNumber[39m[33m.[39m[33mMAX_SAFE_INTEGER[39m [33m+[39m [35m1[39m
+     [90m 159 |[39m             })
+    [31m[1m>[22m[39m[90m 160 |[39m         )[33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m           [31m[1m^[22m[39m
+     [90m 161 |[39m     })[33m;[39m
+     [90m 162 |[39m
+     [90m 163 |[39m[0m
+
+      at Object.<anonymous> (tests/unit/registration.test.js:160:11)
+
+Test Suites: 1 failed, 1 total
+Tests:       9 failed, 9 passed, 18 total
+Snapshots:   0 total
+Time:        0.45 s, estimated 1 s
+Ran all test suites.

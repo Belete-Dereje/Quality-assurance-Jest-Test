@@ -1,0 +1,21 @@
+StrykerJS Payment Mutation Test - Final Run (after improvement)
+Config: stryker.payment.config.js
+Command: npm run mutation:payment
+
+File        | % Mutation score | # killed | # timeout | # survived | # no cov | # errors
+payment.js  | 98.33            | 59       | 0         | 1          | 0        | 0
+
+Manual score = (59 + 0) / (59 + 0 + 1 + 0) * 100 = 98.33%
+Stryker score = 98.33%
+
+Targeted tests added: 8
+File: tests/data-driven/payment.mutation.test.js
+
+Surviving mutant:
+ID 54 ConditionalExpression line 72: else if (method === "bank") -> else if (true)
+Status: Equivalent mutant.
+Reason: validation rejects every method except "card" and "bank", so no valid
+input can distinguish this mutant from the original rule.
+
+Full machine-readable report: reports/mutation/payment-final.json
+Full HTML report: reports/mutation/payment-final.html

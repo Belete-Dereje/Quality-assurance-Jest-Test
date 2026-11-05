@@ -1,0 +1,511 @@
+
+> university-testing-lab@1.0.0 test
+> node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand tests/unit/tuition.test.js
+
+(node:1708) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/unit/tuition.test.js
+  Tuition Calculation Tests
+    √ should return zero tuition when there are no courses (8 ms)
+    √ should calculate tuition for one course (2 ms)
+    √ should calculate tuition for multiple courses (1 ms)
+    √ should use zero scholarship when rate is omitted (1 ms)
+    √ should use zero scholarship when rate is undefined (1 ms)
+    × should reject null scholarship rate (2 ms)
+    × should reject incorrect credit hour type: "3"
+    × should reject incorrect credit hour type: null
+    × should reject incorrect credit hour type: {} (1 ms)
+    × should reject invalid credit hours: -1 (1 ms)
+    × should reject invalid credit hours: 1.5 (1 ms)
+    × should reject invalid credit hours: NaN
+    × should reject invalid credit hours: Infinity (1 ms)
+    × should reject incorrect price type: "100" (1 ms)
+    × should reject incorrect price type: null
+    × should reject incorrect price type: [] (1 ms)
+    × should reject invalid price: -10 (1 ms)
+    × should reject invalid price: NaN (1 ms)
+    × should reject invalid price: Infinity (1 ms)
+    × should reject invalid price: -Infinity (1 ms)
+    × should reject incorrect scholarship type: "0.2" (1 ms)
+    × should reject incorrect scholarship type: null (1 ms)
+    × should reject incorrect scholarship type: true
+    × should reject invalid scholarship rate: -0.1
+    × should reject invalid scholarship rate: 1.1 (1 ms)
+    × should reject invalid scholarship rate: NaN (1 ms)
+    × should reject invalid scholarship rate: Infinity
+    √ should accept zero credit hours and zero price
+    × should round tuition amounts to two decimal places (7 ms)
+    √ should not modify the original course objects (1 ms)
+    × should find the course with the highest total cost (1 ms)
+    × should return null when no courses exist
+    × should return the first course when there is a tie
+
+  ● Tuition Calculation Tests › should reject null scholarship rate
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 68 |[39m     test([32m"should reject null scholarship rate"[39m[33m,[39m () [33m=>[39m {
+     [90m 69 |[39m         expect(() [33m=>[39m calculateTuition([validCourse][33m,[39m [36mnull[39m))
+    [31m[1m>[22m[39m[90m 70 |[39m             [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 71 |[39m     })[33m;[39m
+     [90m 72 |[39m
+     [90m 73 |[39m     [90m// TEST 7: Invalid credit hour types[39m[0m
+
+      at Object.<anonymous> (tests/unit/tuition.test.js:70:14)
+
+  ● Tuition Calculation Tests › should reject incorrect credit hour type: "3"
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 78 |[39m
+     [90m 79 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 80 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 81 |[39m         }
+     [90m 82 |[39m     )[33m;[39m
+     [90m 83 |[39m[0m
+
+      at tests/unit/tuition.test.js:80:18
+
+  ● Tuition Calculation Tests › should reject incorrect credit hour type: null
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 78 |[39m
+     [90m 79 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 80 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 81 |[39m         }
+     [90m 82 |[39m     )[33m;[39m
+     [90m 83 |[39m[0m
+
+      at tests/unit/tuition.test.js:80:18
+
+  ● Tuition Calculation Tests › should reject incorrect credit hour type: {}
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 78 |[39m
+     [90m 79 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 80 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 81 |[39m         }
+     [90m 82 |[39m     )[33m;[39m
+     [90m 83 |[39m[0m
+
+      at tests/unit/tuition.test.js:80:18
+
+  ● Tuition Calculation Tests › should reject invalid credit hours: -1
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 89 |[39m
+     [90m 90 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 91 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 92 |[39m         }
+     [90m 93 |[39m     )[33m;[39m
+     [90m 94 |[39m[0m
+
+      at tests/unit/tuition.test.js:91:18
+
+  ● Tuition Calculation Tests › should reject invalid credit hours: 1.5
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 89 |[39m
+     [90m 90 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 91 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 92 |[39m         }
+     [90m 93 |[39m     )[33m;[39m
+     [90m 94 |[39m[0m
+
+      at tests/unit/tuition.test.js:91:18
+
+  ● Tuition Calculation Tests › should reject invalid credit hours: NaN
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 89 |[39m
+     [90m 90 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 91 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 92 |[39m         }
+     [90m 93 |[39m     )[33m;[39m
+     [90m 94 |[39m[0m
+
+      at tests/unit/tuition.test.js:91:18
+
+  ● Tuition Calculation Tests › should reject invalid credit hours: Infinity
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 89 |[39m
+     [90m 90 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 91 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m 92 |[39m         }
+     [90m 93 |[39m     )[33m;[39m
+     [90m 94 |[39m[0m
+
+      at tests/unit/tuition.test.js:91:18
+
+  ● Tuition Calculation Tests › should reject incorrect price type: "100"
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 100 |[39m
+     [90m 101 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 102 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 103 |[39m         }
+     [90m 104 |[39m     )[33m;[39m
+     [90m 105 |[39m[0m
+
+      at tests/unit/tuition.test.js:102:18
+
+  ● Tuition Calculation Tests › should reject incorrect price type: null
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 100 |[39m
+     [90m 101 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 102 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 103 |[39m         }
+     [90m 104 |[39m     )[33m;[39m
+     [90m 105 |[39m[0m
+
+      at tests/unit/tuition.test.js:102:18
+
+  ● Tuition Calculation Tests › should reject incorrect price type: []
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 100 |[39m
+     [90m 101 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 102 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 103 |[39m         }
+     [90m 104 |[39m     )[33m;[39m
+     [90m 105 |[39m[0m
+
+      at tests/unit/tuition.test.js:102:18
+
+  ● Tuition Calculation Tests › should reject invalid price: -10
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 111 |[39m
+     [90m 112 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 113 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 114 |[39m         }
+     [90m 115 |[39m     )[33m;[39m
+     [90m 116 |[39m[0m
+
+      at tests/unit/tuition.test.js:113:18
+
+  ● Tuition Calculation Tests › should reject invalid price: NaN
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 111 |[39m
+     [90m 112 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 113 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 114 |[39m         }
+     [90m 115 |[39m     )[33m;[39m
+     [90m 116 |[39m[0m
+
+      at tests/unit/tuition.test.js:113:18
+
+  ● Tuition Calculation Tests › should reject invalid price: Infinity
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 111 |[39m
+     [90m 112 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 113 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 114 |[39m         }
+     [90m 115 |[39m     )[33m;[39m
+     [90m 116 |[39m[0m
+
+      at tests/unit/tuition.test.js:113:18
+
+  ● Tuition Calculation Tests › should reject invalid price: -Infinity
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 111 |[39m
+     [90m 112 |[39m             expect(() [33m=>[39m calculateTuition([course]))
+    [31m[1m>[22m[39m[90m 113 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 114 |[39m         }
+     [90m 115 |[39m     )[33m;[39m
+     [90m 116 |[39m[0m
+
+      at tests/unit/tuition.test.js:113:18
+
+  ● Tuition Calculation Tests › should reject incorrect scholarship type: "0.2"
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 120 |[39m         (rate) [33m=>[39m {
+     [90m 121 |[39m             expect(() [33m=>[39m calculateTuition([validCourse][33m,[39m rate))
+    [31m[1m>[22m[39m[90m 122 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 123 |[39m         }
+     [90m 124 |[39m     )[33m;[39m
+     [90m 125 |[39m[0m
+
+      at tests/unit/tuition.test.js:122:18
+
+  ● Tuition Calculation Tests › should reject incorrect scholarship type: null
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 120 |[39m         (rate) [33m=>[39m {
+     [90m 121 |[39m             expect(() [33m=>[39m calculateTuition([validCourse][33m,[39m rate))
+    [31m[1m>[22m[39m[90m 122 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 123 |[39m         }
+     [90m 124 |[39m     )[33m;[39m
+     [90m 125 |[39m[0m
+
+      at tests/unit/tuition.test.js:122:18
+
+  ● Tuition Calculation Tests › should reject incorrect scholarship type: true
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+    [0m [90m 120 |[39m         (rate) [33m=>[39m {
+     [90m 121 |[39m             expect(() [33m=>[39m calculateTuition([validCourse][33m,[39m rate))
+    [31m[1m>[22m[39m[90m 122 |[39m                 [33m.[39mtoThrow([33mTypeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 123 |[39m         }
+     [90m 124 |[39m     )[33m;[39m
+     [90m 125 |[39m[0m
+
+      at tests/unit/tuition.test.js:122:18
+
+  ● Tuition Calculation Tests › should reject invalid scholarship rate: -0.1
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 129 |[39m         (rate) [33m=>[39m {
+     [90m 130 |[39m             expect(() [33m=>[39m calculateTuition([validCourse][33m,[39m rate))
+    [31m[1m>[22m[39m[90m 131 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 132 |[39m         }
+     [90m 133 |[39m     )[33m;[39m
+     [90m 134 |[39m[0m
+
+      at tests/unit/tuition.test.js:131:18
+
+  ● Tuition Calculation Tests › should reject invalid scholarship rate: 1.1
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 129 |[39m         (rate) [33m=>[39m {
+     [90m 130 |[39m             expect(() [33m=>[39m calculateTuition([validCourse][33m,[39m rate))
+    [31m[1m>[22m[39m[90m 131 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 132 |[39m         }
+     [90m 133 |[39m     )[33m;[39m
+     [90m 134 |[39m[0m
+
+      at tests/unit/tuition.test.js:131:18
+
+  ● Tuition Calculation Tests › should reject invalid scholarship rate: NaN
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 129 |[39m         (rate) [33m=>[39m {
+     [90m 130 |[39m             expect(() [33m=>[39m calculateTuition([validCourse][33m,[39m rate))
+    [31m[1m>[22m[39m[90m 131 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 132 |[39m         }
+     [90m 133 |[39m     )[33m;[39m
+     [90m 134 |[39m[0m
+
+      at tests/unit/tuition.test.js:131:18
+
+  ● Tuition Calculation Tests › should reject invalid scholarship rate: Infinity
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 129 |[39m         (rate) [33m=>[39m {
+     [90m 130 |[39m             expect(() [33m=>[39m calculateTuition([validCourse][33m,[39m rate))
+    [31m[1m>[22m[39m[90m 131 |[39m                 [33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 132 |[39m         }
+     [90m 133 |[39m     )[33m;[39m
+     [90m 134 |[39m[0m
+
+      at tests/unit/tuition.test.js:131:18
+
+  ● Tuition Calculation Tests › should round tuition amounts to two decimal places
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "discount": 1.06,
+    -   "payable": 9.5,
+    -   "subtotal": 10.56,
+    +   "discount": 1.0555,
+    +   "payable": 9.4995,
+    +   "subtotal": 10.555,
+      }
+
+    [0m [90m 153 |[39m         ][33m;[39m
+     [90m 154 |[39m
+    [31m[1m>[22m[39m[90m 155 |[39m         expect(calculateTuition(courses[33m,[39m [35m0.1[39m))[33m.[39mtoEqual({
+     [90m     |[39m                                                [31m[1m^[22m[39m
+     [90m 156 |[39m             subtotal[33m:[39m [35m10.56[39m[33m,[39m
+     [90m 157 |[39m             discount[33m:[39m [35m1.06[39m[33m,[39m
+     [90m 158 |[39m             payable[33m:[39m [35m9.50[39m[0m
+
+      at Object.<anonymous> (tests/unit/tuition.test.js:155:48)
+
+  ● Tuition Calculation Tests › should find the course with the highest total cost
+
+    TypeError: tuition.findMostExpensiveCourse is not a function
+
+    [0m [90m 194 |[39m         }[33m;[39m
+     [90m 195 |[39m
+    [31m[1m>[22m[39m[90m 196 |[39m         [36mconst[39m result [33m=[39m tuition[33m.[39mfindMostExpensiveCourse([
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 197 |[39m             courseA[33m,[39m
+     [90m 198 |[39m             courseB[33m,[39m
+     [90m 199 |[39m             courseC[0m
+
+      at Object.<anonymous> (tests/unit/tuition.test.js:196:32)
+
+  ● Tuition Calculation Tests › should return null when no courses exist
+
+    TypeError: tuition.findMostExpensiveCourse is not a function
+
+    [0m [90m 205 |[39m     [90m// TEST 17: Empty course array[39m
+     [90m 206 |[39m     test([32m"should return null when no courses exist"[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 207 |[39m         expect(tuition[33m.[39mfindMostExpensiveCourse([]))[33m.[39mtoBeNull()[33m;[39m
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 208 |[39m     })[33m;[39m
+     [90m 209 |[39m
+     [90m 210 |[39m     [90m// TEST 18: Tied course costs[39m[0m
+
+      at Object.<anonymous> (tests/unit/tuition.test.js:207:24)
+
+  ● Tuition Calculation Tests › should return the first course when there is a tie
+
+    TypeError: tuition.findMostExpensiveCourse is not a function
+
+    [0m [90m 222 |[39m         }[33m;[39m
+     [90m 223 |[39m
+    [31m[1m>[22m[39m[90m 224 |[39m         [36mconst[39m result [33m=[39m tuition[33m.[39mfindMostExpensiveCourse([
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 225 |[39m             courseA[33m,[39m
+     [90m 226 |[39m             courseB
+     [90m 227 |[39m         ])[33m;[39m[0m
+
+      at Object.<anonymous> (tests/unit/tuition.test.js:224:32)
+
+Test Suites: 1 failed, 1 total
+Tests:       26 failed, 7 passed, 33 total
+Snapshots:   0 total
+Time:        0.604 s, estimated 1 s
+Ran all test suites matching tests/unit/tuition.test.js.
